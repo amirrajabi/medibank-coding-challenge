@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 
+import CatItem from './CatItem'
+
 const CatsList: React.FC = () => {
   const [catsByGender, setCatsByGender] = useState<{ gender: string; cats: string[] }[]>([]);
 
@@ -43,11 +45,11 @@ const CatsList: React.FC = () => {
   return (
     <div className="flex">
       {catsByGender.map((group) => (
-        <div key={group.gender} className="px-5 py-4 mx-5 rounded-lg border border-gray-300 bg-gray-100 dark:border-neutral-700 dark:bg-neutral-800/30 w-32">
-          <h2>{group.gender}</h2>
+        <div key={group.gender} className="px-5 py-4 mx-5 rounded-lg border border-gray-300 bg-gray-100 dark:border-neutral-700 dark:bg-neutral-800/30 w-full">
+          <h2 className='text-3xl font-semibold mb-8'>{group.gender}</h2>
           <ul>
             {group.cats.map((catName) => (
-              <li key={catName}>{catName}</li>
+              <li key={catName}><CatItem name={catName}/></li>
             ))}
           </ul>
         </div>
