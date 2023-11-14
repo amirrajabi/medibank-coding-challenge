@@ -49,7 +49,7 @@ const CatsList: React.FC = () => {
           <h2 className='text-3xl font-semibold mb-8'>{group.gender}</h2>
           <ul>
             {group.cats.map((catName) => (
-              <li key={catName}><CatItem name={catName}/></li>
+              <li key={catName} className="w-72"><CatItem name={catName}/></li>
             ))}
           </ul>
         </div>
